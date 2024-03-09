@@ -1,2 +1,2 @@
 # Netflix-clone
-A Beautiful Netflix Clone
+A Beautiful Netflix Clone with normal HTML and CSS, along with a responsive design which is mobile and tablet friendly...
