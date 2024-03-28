@@ -106,7 +106,7 @@ form .form-control input {
   margin-bottom: 12px;
   padding: 0px 18px 0px 20px;
 }
-form .form-control input:is(:focus, :valid){
+form .form-control input:is(:focus){
   padding: 5px 18px 0px 20px;
   background-color: #444444b9;
 }
