@@ -13,16 +13,16 @@ body {
 
 .main {
   background-image: url("assets/images/bg2.jpg");
-  height: 1000px;
+  height: 1200px;
   background-position: center center;
-  background-size: max(1800px, 120vw);
+  background-size: max(2200px, 110vw);
   background-repeat: no-repeat;
   position: relative;
 }
 
 .main .imagebox {
   opacity: 0.5;
-  height: 1000px;
+  height: 1200px;
   width: 100%;
   background-color: black;
   position: absolute;
@@ -69,10 +69,11 @@ nav img {
   background-color: rgba(0, 0, 0, 0.625);
   width: 350px;
   padding: 60px;
+  padding-bottom: 200px;
   border-radius: 4px;
   color: white;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   flex-direction: column;
   top: 10%;
@@ -91,65 +92,183 @@ nav img {
 form .form-control {
   position: relative;
   height: 50px;
-  margin-bottom: 16px;
+  width: 320px;
+  margin: 14px;
+  margin-left: 10px;
+  margin-bottom: 30px;
 }
 
 form .form-control input {
   height: 100%;
   width: 100%;
   border-radius: 4px;
-  outline: none;
-  border: none;
+  border: 1px solid #aeadad9b;
   color: white;
   background-color: #2120209c;
   font-size: 1rem;
-  margin-bottom: 12px;
-  padding: 0px 18px 0px 20px;
+  margin-left: -8px;
+  padding: 12px 0px 0px 20px;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-form .form-control input:is(:focus){
-  padding: 5px 18px 0px 20px;
-  background-color: #444444b9;
+
+form .form-control input:is(:focus) {
+  padding-top: 12px;
+  background-color: #2120209c;
+  border: 1px solid #aeadad;
+}
+form .form-control input:is(:valid) {
+  padding-top: 12px;
+  background-color: #293949b9;
+  border: 1px solid #aeadad;
 }
 
 .form-control label {
   position: absolute;
-  left: 20px;
-  top: 50%;
-  color: #cacaca;
+  left: 10px;
+  top: 65%;
+  color: #aeadad;
   pointer-events: none;
   font-size: 1rem;
   transform: translateY(-50%);
   transition: all 0.1s ease;
 }
 
-form .form-control input:is(:focus, :valid) ~ label {
-  font-size: 0.75rem;
+form .form-control input:is(:focus, :valid)~label {
+  font-size: 0.70rem;
+  top: 60%;
   transform: translateY(-130%);
+  margin-top: 4px;
+  margin-left: 3px;
 }
 
 form button {
   font-size: 1rem;
   height: 100%;
-  padding: 5px 0px;
+  padding: 8px 0px;
   outline: none;
   width: 100%;
   color: white;
   background-color: red;
-  border-radius: 4px;
+  border-radius: 5px;
   font-weight: 500;
-margin: 12px 0px 12px 0px;
-transition: 0.5 ease;
+  margin: 0px 0px 12px 0px;
+  transition: 0.5 ease;
 }
-form button:hover{
+
+form button:hover {
   background-color: rgb(194, 14, 14);
 }
-form .form-help{
+
+form .form-help {
   display: flex;
   justify-content: space-between;
 }
-form .form-help :where(label , a){
-font-size: 0.9rem;
+form .remember-me{
+  display: flex;
+  color: white;
 }
-.form-wrapper :where(p, small, label , a){
+form .remember-me input{
+ margin-right:5px ;
+ accent-color: #6a6a6a;
+ width: 17px;
+}
+
+form .form-help :where(label, a) {
+  font-size: 0.9rem;
+}
+
+.form-wrapper :where(p, small, label, a) {
   color: #b3b3b3;
+}
+.form-wrapper p a{
+  color: white;
+  text-decoration: none;
+}
+.form-wrapper small{
+  display: block;
+  font-size: 13px;
+  color: #b3b3b3c3;
+  margin-top: 20px;
+}
+.form-wrapper small a{
+  color:dodgerblue;
+  text-decoration: none;
+}
+.form-wrapper a:hover{
+  text-decoration: underline;
+}
+.footer-here{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.625);
+  width: auto;
+  padding: 50px 100px 80px 200px;
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.contact {
+  padding: 25px 0;
+  color: #b3b3b3;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: white;
+  font-size: 14px;
+}
+.footer-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.footer-items a {
+  color: #b3b3b3;
+  width: 240px;
+}
+@media screen and (max-width: 950px){
+  nav {
+    max-width: 90vw;
+  }
+  nav img {
+    width: 100px;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 14px;
+    gap: 25px;
+    max-width: 90vw;
+  }
+  .footer-items {
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .footer-items a {
+    width: 140px;
+  }
+}
+@media screen and (max-width: 600px){
+  body::before{
+display: none;
+  }
+  .main .imagebox {
+    opacity: 1;
+  }
+  .form-wrapper {
+    top: 5%;
+    padding-bottom: 100px;
+  }
+  .footer-here{
+    border-top: 0.5px solid #b3b3b3;
+  }
+
 }
