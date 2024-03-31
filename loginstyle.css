@@ -265,11 +265,18 @@ display: none;
   }
   .form-wrapper {
     top: 5%;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
   }
   .footer-here{
     border-top: 0.5px solid #b3b3b3;
     padding: 50px 50px 50px 50px;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 14px;
+    gap: 25px;
+    max-width: 50vw;
   }
 
 }
